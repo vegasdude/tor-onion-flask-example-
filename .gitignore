@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+venv/
+tor_data/
+private_key
