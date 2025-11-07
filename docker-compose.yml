@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  web:
+    build: .
+    networks:
+      - internal
+  tor:
+    image: alpine/tor
+    volumes:
+      - ./torrc:/etc/tor/torrc:ro
+      - tor_data:/var/lib/tor
+    networks:
+      - internal
+
+volumes:
+  tor_data:
+
+networks:
+  internal:
